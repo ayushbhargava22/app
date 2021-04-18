@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maya Data</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">    
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li class="first">
+                    <div class="topbar">
+                        <div class="toggle" onclick="toggleMenu();"><img src="https://img.icons8.com/android/24/000000/menu.png"/></div>
+                     </div>
+                    <span class="icon"></span>
+                    <span class="title"><h2 class="roll">1829010</h2></span>
+                </li>
+                <li class="links">
+                    <a href="/index.html">
+                        <span class="icon"><img src="Vector.png"></span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/about.html">
+                        <span class="icon"><img src="user.png"></span>
+                        <span class="title">About</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+
+            <div class="formWrap">
+                <h2>My Mettings</h2>
+
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+                <table>
+                    <thead>
+                      <tr>
+                        <th>S.No</th>
+                        <th>Metting Name</th>
+                        <th>No of people attended</th>
+                        <th>Date</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tbody id="book-list"></tbody>
+                    </tbody>
+                  </table>
+
+                  <form id="book-form">
+                    <div class="form-group">
+                      <label for="title">Metting Name</label>
+                      <input type="text" id="title" class="form-control inp1">
+                    </div>
+                    <div class="form-group">
+                      <label for="author">No of people attended</label>
+                      <input type="number" id="author" class="form-control inp2">
+                    </div>
+                    <div class="form-group">
+                      <label for="isbn">Date</label>
+                      <input type="date" id="isbn" class="form-control inp3">
+                    </div>
+                    <div class="form-group">
+                        <label for="stime">Start Time</label>
+                        <input type="time" id="stime" class="form-control inp4">
+                    </div>
+                    <div class="form-group">
+                        <label for="etime">End Time</label>
+                        <input type="time" id="etime" class="form-control inp5">
+                      </div>
+                    <input type="submit" value="Add Metting" class="btn btn-primary btn-block">
+                  </form>
+
+                  
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        function toggleMenu() {
+            let toggle = document.querySelector('.toggle');
+            let navigation = document.querySelector('.navigation');
+            let main = document.querySelector('.main');
+            toggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+            main.classList.toggle('active')
+        }
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("book-list");
+            li = ul.getElementsByTagName("tr");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("td")[1];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+    }
+    </script>
+    <script src="./main.js"></script>
+</body>
+</html>

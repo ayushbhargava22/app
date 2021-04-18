@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maya Data</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">    
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li class="first">
+                    <div class="topbar">
+                        <div class="toggle" onclick="toggleMenu();"><img src="https://img.icons8.com/android/24/000000/menu.png"/></div>
+                     </div>
+                    <span class="icon"></span>
+                    <span class="title"><h2 class="roll">1829010</h2></span>
+                </li>
+                <li class="links">
+                    <a href="/index.html">
+                        <span class="icon"><img src="Vector.png"></span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/about.html">
+                        <span class="icon"><img src="user.png"></span>
+                        <span class="title">About</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="aboutTitle">
+                <h1>About Me</h1>
+            </div>
+            <div class="aboutWrap">
+                <div class="namehard">
+                    <h2>Name:</h2>&nbsp;&nbsp;<h2>Ayush Bhargava</h2>
+                </div>
+                <div class="rollhard">
+                    <h2>Roll no:</h2>&nbsp;&nbsp;<h2>1829010</h2>
+                </div>
+                <div class="github">
+                    <h2>GitHub Profile:</h2>&nbsp;&nbsp;<h2><a href="https://github.com/ayushbhargava22">Click Here</a></h2>
+                </div>
+                <div class="skills">
+                    <h2>Skills:</h2>&nbsp;&nbsp;<h2>React.js, HTML, CSS, Node.js, DSA, AdobeXd</h2>
+                </div>
+
+                <div class="projects">
+                    <h1>Projects:</h1><br>
+                    <ol>
+                        <li>
+                            <h1>Bill Managment Application</h1><span>Full stack application for Predicting invoice payment dates and bucketing them</span>
+                        </li>
+                        <li>
+                            <h1>E-tayari</h1><span>Website for Online Course from class 6th-10th with payment integrated</span>
+                        </li>
+                        <li>
+                            <h1>Sports app UI/UX</h1><span>Prototype for sports app using AdobeXd</span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            let toggle = document.querySelector('.toggle');
+            let navigation = document.querySelector('.navigation');
+            let main = document.querySelector('.main');
+            toggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+            main.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>
